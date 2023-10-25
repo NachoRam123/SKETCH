@@ -1,8 +1,23 @@
 body {
-    background-color: darkcyan;
+    background-color: blanchedalmond;
 }
 
 #grid_container {
-    height: 800px;
     background-color: blanchedalmond;
+    display: flex;
+    flex-direction: column;
+}
+
+.verticals {
+    margin: 0px;
+    flex: 1 1 auto;
+    display: flex;
+}
+
+.horizontals {
+    margin: 5px;
+    width: 15px;
+    aspect-ratio: 1/1;
+    flex: 1 0 auto;
+    background-color: black;
 }
