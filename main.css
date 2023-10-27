@@ -3,6 +3,9 @@ body {
 }
 
 #grid_container {
+    height: 800px;
+    width: 800px;
+    margin: auto;
     background-color: rgb(25, 39, 100);
     display: flex;
     flex-direction: column;
@@ -10,15 +13,14 @@ body {
 
 .verticals {
     margin: 0px;
-    flex: 1 1 auto;
     display: flex;
+    justify-content: center;
 }
 
 .horizontals {
     margin: 2px;
-    width: 15px;
     aspect-ratio: 1/1;
-    flex: 1 0 auto;
+    flex: 1 0 0;
     background-color: rgb(60, 131, 211);
 }
 
