@@ -1,9 +1,9 @@
 body {
-    background-color: blanchedalmond;
+    background-color: rgb(25, 39, 100);
 }
 
 #grid_container {
-    background-color: blanchedalmond;
+    background-color: rgb(25, 39, 100);
     display: flex;
     flex-direction: column;
 }
@@ -15,9 +15,42 @@ body {
 }
 
 .horizontals {
-    margin: 5px;
+    margin: 2px;
     width: 15px;
     aspect-ratio: 1/1;
     flex: 1 0 auto;
-    background-color: black;
+    background-color: rgb(60, 131, 211);
+}
+
+.horizontals:hover {
+    background-color: rgb(0, 0, 0);
+}
+
+#header {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+h3 {
+    color: white;
+    margin: 0;
+    vertical-align: middle;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgb(60, 131, 211);
+    opacity: 0.8;
+    color: white;
+    font-weight: 650;
+}
+
+button:hover {
+    opacity: 1;
+    cursor: grab;
 }
