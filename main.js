@@ -6,11 +6,14 @@ function createGrid(number) {
     while (gridContainer.firstChild) gridContainer.removeChild( gridContainer.firstChild);
     for (let i = 1; i<=number; i++) {
         let divVertical = document.createElement('div');
-        divVertical.classList.add('div_squares', 'verticals');
+        divVertical.classList.add('verticals');
         gridContainer.appendChild(divVertical);
         for (let i = 1; i<=number; i++) {
             let divHoriz = document.createElement('div');
-            divHoriz.classList.add('div_squares', 'horizontals');
+            divHoriz.classList.add('horizontals');
+            divHoriz.addEventListener('click',  function ChangeBgColor(event) {
+                event.target.style.backgroundColor = 'black';
+            })
             divVertical.appendChild(divHoriz);
         }    
     }
