@@ -3,19 +3,26 @@ let gridContainer = document.querySelector('#grid_container');
 window.addEventListener('DOMContentLoaded', createGrid(16));
 
 function createGrid(number) {
+    let contador = 0 
     while (gridContainer.firstChild) gridContainer.removeChild( gridContainer.firstChild);
     for (let i = 1; i<=number; i++) {
         let divVertical = document.createElement('div');
         divVertical.classList.add('verticals');
         gridContainer.appendChild(divVertical);
         for (let i = 1; i<=number; i++) {
+            contador += 1;
             let divHoriz = document.createElement('div');
-            divHoriz.classList.add('horizontals');
+            divHoriz.classList.add('horizontals'); 
+            divHoriz.setAttribute('id',`${contador}`);
             divHoriz.addEventListener('mouseover',  changeColor);
             divHoriz.addEventListener('mousedown',  changeColor);
             divVertical.appendChild(divHoriz);
         }    
     }
+    // Add a boom in a random square
+    let random = (Math.round(Math.random() * contador)).toString();
+    let randomSquare = document.getElementById('1');
+    randomSquare.classList.add('boom')
 }
 
 let changeNumber = document.querySelector('button');
@@ -45,6 +52,17 @@ document.body.onmousedown = () => (mouseDown = true);
 document.body.onmouseup = () => (mouseDown = false);
 
 function changeColor(e) {
-    if (e.type === 'mouseover' && !mouseDown) return
-    e.target.style.backgroundColor = 'black'
+    if (e.type === 'mousedown') 
+        if (e.target.classList.contains('boom')) {
+            endGame();
+        } 
+        else {
+            e.target.style.backgroundColor = 'black'
+        }
+  }
+
+  function endGame () {
+    alert('Perdisteeee');
+    createGrid(16);
+    mouseDown = true
   }
