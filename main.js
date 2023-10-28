@@ -1,20 +1,23 @@
-let number = 10;
+let gridContainer = document.querySelector('#grid_container');
+
+window.addEventListener('DOMContentLoaded', createGrid(16));
+
+function createGrid(number) {
+    while (gridContainer.firstChild) gridContainer.removeChild( gridContainer.firstChild);
+    for (let i = 1; i<=number; i++) {
+        let divVertical = document.createElement('div');
+        divVertical.classList.add('div_squares', 'verticals');
+        gridContainer.appendChild(divVertical);
+        for (let i = 1; i<=number; i++) {
+            let divHoriz = document.createElement('div');
+            divHoriz.classList.add('div_squares', 'horizontals');
+            divVertical.appendChild(divHoriz);
+        }    
+    }
+}
 
 let changeNumber = document.querySelector('button');
 changeNumber.addEventListener('click', inputNumber);
-
-
-let gridContainer = document.querySelector('#grid_container');
-for (let i = 1; i<=number; i++) {
-    let divVertical = document.createElement('div');
-    divVertical.classList.add('div_squares', 'verticals');
-    gridContainer.appendChild(divVertical);
-    for (let i = 1; i<=number; i++) {
-        let divHoriz = document.createElement('div');
-        divHoriz.classList.add('div_squares', 'horizontals');
-        divVertical.appendChild(divHoriz);
-    }    
-}
 
 function inputNumber() {
     let error = true
@@ -23,7 +26,7 @@ function inputNumber() {
         if (isNaN(newNumber))  {
             alert('Put a number please');
         }
-        else if (newNumber > 50) {
+        else if (newNumber > 100) {
             alert('Put a lower number please')
         }
         else if (newNumber < 0) {
@@ -33,5 +36,5 @@ function inputNumber() {
             error = false
         }
     }
-    number = newNumber;
+    createGrid(newNumber);
 }
