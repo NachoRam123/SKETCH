@@ -11,9 +11,8 @@ function createGrid(number) {
         for (let i = 1; i<=number; i++) {
             let divHoriz = document.createElement('div');
             divHoriz.classList.add('horizontals');
-            divHoriz.addEventListener('click',  function ChangeBgColor(event) {
-                event.target.style.backgroundColor = 'black';
-            })
+            divHoriz.addEventListener('mouseover',  changeColor);
+            divHoriz.addEventListener('mousedown',  changeColor);
             divVertical.appendChild(divHoriz);
         }    
     }
@@ -41,3 +40,11 @@ function inputNumber() {
     }
     createGrid(newNumber);
 }
+let mouseDown = false;
+document.body.onmousedown = () => (mouseDown = true);
+document.body.onmouseup = () => (mouseDown = false);
+
+function changeColor(e) {
+    if (e.type === 'mouseover' && !mouseDown) return
+    e.target.style.backgroundColor = 'black'
+  }

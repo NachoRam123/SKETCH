@@ -18,7 +18,7 @@ body {
 }
 
 .horizontals {
-    margin: 1px;
+    margin: 0.5px;
     aspect-ratio: 1/1;
     flex: 1 0 0;
     background-color: rgb(60, 131, 211);
