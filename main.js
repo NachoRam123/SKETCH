@@ -21,7 +21,7 @@ function createGrid(number) {
     }
     // Add a boom in a random square
     let random = (Math.round(Math.random() * contador)).toString();
-    let randomSquare = document.getElementById('1');
+    let randomSquare = document.getElementById(random);
     randomSquare.classList.add('boom')
 }
 
@@ -62,7 +62,7 @@ function changeColor(e) {
   }
 
   function endGame () {
-    alert('Perdisteeee');
+    alert('BOOOOOOOOOOOMMM\nGame Over');
     createGrid(16);
     mouseDown = true
   }

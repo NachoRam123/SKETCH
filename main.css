@@ -2,9 +2,25 @@ body {
     background-color: rgb(25, 39, 100);
 }
 
+.gameDescription {
+    /* display: flex; */
+    /* margin: auto; */
+    text-align: center;
+    margin: 10px;
+    /* align-items: center; */
+
+}
+.gameDescription h3 {
+    border-color: white;
+    border: 10px;
+    border-style: double;
+    padding: 5px;
+    /* background-color: aqua; */
+}
+
 #grid_container {
-    height: 800px;
-    width: 800px;
+    height: 600px;
+    width: 600px;
     margin: auto;
     background-color: rgb(25, 39, 100);
     display: flex;
