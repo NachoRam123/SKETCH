@@ -62,7 +62,7 @@ function changeColor(e) {
   }
 
   function endGame () {
-    alert('BOOOOOOOOOOOMMM\nGame Over');
+    alert('BOOOOOOOOOOOMMM\nGame Over\nTry Again Looser!');
     createGrid(16);
     mouseDown = true
   }
